@@ -1,0 +1,60 @@
+                                                             <!--DAY 3 TASK-->
+
+<!--Comparison of two JSON have the same properties-->
+
+let obj1 = { age: 5, name: 'person1'};
+let obj2 = { name: 'person1', age: 5};
+
+console.log(_.isEqual(obj1, obj2));
+
+<!--For flags-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Day 3 Task</title>
+    </head>
+    <body>
+        <script>
+            let xhr = new XMLHttpRequest();
+            
+            xhr.open('GET', 'https://restcountries.com/v3.1/all', true);
+
+            xhr.onload = function () {
+                let response = JSON.parse(xhr.responseText);
+                for(let index=0; index<response.length; index++){
+                    console.log(response[index].flags);
+                  }
+            };
+            xhr.send();
+        </script>
+    </body>
+</html>
+
+
+<!--For Name Region Subregion and Population-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Day 3 Task</title>
+    </head>
+    <body>
+        <script>
+            let xhr = new XMLHttpRequest();
+            
+            xhr.open('GET', 'https://restcountries.com/v3.1/all', true);
+
+            xhr.onload = function () {
+                let response = JSON.parse(xhr.responseText);
+                for(let index=0; index<response.length; index++){
+                    console.log(response[index].name);
+                    console.log(response[index].region);
+                    console.log(response[index].subregion);
+                    console.log(response[index].population);
+                }
+            };
+            xhr.send();
+        </script>
+    </body>
+</html>
